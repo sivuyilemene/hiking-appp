@@ -8,8 +8,8 @@ app.use(cors())
 const port = 8888;
 
 app.get('/hikes', (req, res) => {
-    const temp = Promise.resolve(getHikes())
-    temp.then(value => {
+    const result = Promise.resolve(getHikes())
+    result.then(value => {
       res.json({hikes: value.body})
     })
   });
