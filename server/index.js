@@ -1,9 +1,17 @@
-const express = require('express');
-const app = express();
-const port = 8080;
+import  getHikes  from "./functions/getHikes.js";
+import express from 'express'
+import cors from 'cors'
 
-app.get('/api/home', (req, res) => {
-    res.json({message: 'Get request!'})
+
+const app = express();
+app.use(cors())
+const port = 8888;
+
+app.get('/hikes', (req, res) => {
+    const temp = Promise.resolve(getHikes())
+    temp.then(value => {
+      res.json({hikes: value.body})
+    })
   });
 
 
