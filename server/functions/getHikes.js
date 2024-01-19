@@ -1,5 +1,3 @@
-import {docClient} from "../helpers/database.js"
-
 import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 import { DynamoDBDocumentClient, ScanCommand } from "@aws-sdk/lib-dynamodb";
 
