@@ -1,11 +1,15 @@
 import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 import { DynamoDBDocumentClient, ScanCommand } from "@aws-sdk/lib-dynamodb";
 
+const REGION = "";
+const ACCESSKEYID = "";
+const SECRETACCESSKEY = ""; 
+
 const dynamoDB = new DynamoDBClient ({
-    region: "REGION",
+    region: REGION,
     credentials: {
-        accessKeyId: "ACCESSKEY",
-        secretAccessKey: "SECRETACCESSKEY",
+        accessKeyId: ACCESSKEYID,
+        secretAccessKey: SECRETACCESSKEY,
     },
 
 });
@@ -14,7 +18,7 @@ const docClient = DynamoDBDocumentClient.from(dynamoDB);
 
 const getHikes = async () => {
   const command = new ScanCommand({
-    TableName: "TestTable",
+    TableName: "HikeTable",
   });
 
   const response = await docClient.send(command);

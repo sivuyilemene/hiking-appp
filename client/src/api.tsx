@@ -1,9 +1,34 @@
+import {useEffect, useState} from "react"
 
-//dummy data 
-const fetchHikingSpots = [
-    { id: 1, trail: 'Trail 1', location: 'Location 1', rating: 4.5 },
-    { id: 2, trail: 'Trail 2', location: 'Location 2', rating: 4.0,},
-    // ... other hiking spots
-  ];
+interface HikeData {
+  Location: string;
+  Trail: string;
+  Preparation: string;
+  Difficulty: string;
+  Rating: Number;
+ }
 
-  export default  fetchHikingSpots;
+
+function fetchHikingSpots() {
+
+  const [hikes, setHikes] = useState<HikeData[]>([])
+  const [loading, setLoading] = useState(false)
+  useEffect(() => {
+    setLoading(true)
+    fetch("http://localhost:5000/hikes")
+      .then(response => response.json())
+      .then(json => {
+          console.log(json.hikes)
+          setHikes(json.hikes)
+          setLoading(false)
+      }).catch((error) => {
+          console.error(error);
+          setLoading(false)
+      })
+   
+  }, [])
+
+  return {loading, hikes}
+}
+
+export default  fetchHikingSpots
