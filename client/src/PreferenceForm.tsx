@@ -63,6 +63,8 @@ const PreferenceForm = async ({ onRecommendation }: any) => {
               className="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:border-blue-500"
             />
           </label>
+
+          
     
           <button
             type="submit"

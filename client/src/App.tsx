@@ -1,7 +1,7 @@
 import './App.css'
 
 import './styles/tailwind.css';
-import Myview from './styles/sroll';
+import Myview from './styles/scroll';
 import Header from './assets/Header';
 
 import HikingSpotsList from './HikingSpotsList'
@@ -18,7 +18,7 @@ function App() {
     
     <Navbar />
     <Header />
-    {/* if you call MyView show runtime error */}
+    <Myview/>
 
 
     <HikingSpotsList/>

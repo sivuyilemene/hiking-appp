@@ -1,9 +1,6 @@
-
-
 import React from 'react';
-import hiking1 from "./src/assets/hiking1.jpeg";
-import hiking2 from "./src/assets/hiking2.jpg";
-
+import hiking1 from "../assets/hiking1.jpeg"
+import hiking2 from "../assets/hiking2.jpeg";
 
 //import hiking2 from './src/assets/hiking2.jpg';
 
