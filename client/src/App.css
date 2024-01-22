@@ -1,13 +1,25 @@
 #root {
+  width: 100%;
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  box-sizing: border-box;
 }
 
+.root-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
 .logo {
-  height: 6em;
-  padding: 1.5em;
+  width: 100%;
+  max-width: 6em;
+  padding: 2%;
   will-change: filter;
   transition: filter 300ms;
 }

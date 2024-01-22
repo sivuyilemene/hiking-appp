@@ -1,5 +1,5 @@
 {
-  "name": "client",
+  "name": "newhikingapp",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,12 +9,15 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
-  "proxy": "http://localhost:3001",
   "dependencies": {
+    "autoprefixer": "^10.4.17",
+    "postcss": "^8.4.33",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^3.4.1"
   },
   "devDependencies": {
+    "@types/node": "^20.11.5",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
     "@typescript-eslint/eslint-plugin": "^6.14.0",
