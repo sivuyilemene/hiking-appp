@@ -1,36 +1,34 @@
-import React, {useEffect, useState} from 'react';
+import {useEffect, useState} from "react"
 
 interface HikeData {
-    Location: string;
-    Trail: string;
-    Preparation: string;
-    Difficulty: string;
-    Rating: string;
-   }
+  Location: string;
+  Trail: string;
+  Preparation: string;
+  Difficulty: string;
+  Rating: Number;
+ }
 
-function fetchhikingSpots() {
 
-    const [hikes, setHikes] = useState<HikeData[]>([])
-    const [loading, setLoading] = useState(false)
-    useEffect(() => {
-      setLoading(true)
-      fetch("http://localhost:5000/hikes")
-        .then(response => response.json())
-        .then(json => {
-            console.log(json.hikes)
-            setHikes(json.hikes)
-            setLoading(false)
-        }).catch((error) => {
-            console.error(error);
-            setLoading(false)
-        })
-     
-    }, [])
+function fetchHikingSpots() {
 
-    return {loading, hikes}
+  const [hikes, setHikes] = useState<HikeData[]>([])
+  const [loading, setLoading] = useState(false)
+  useEffect(() => {
+    setLoading(true)
+    fetch("http://localhost:5000/hikes")
+      .then(response => response.json())
+      .then(json => {
+          console.log(json.hikes)
+          setHikes(json.hikes)
+          setLoading(false)
+      }).catch((error) => {
+          console.error(error);
+          setLoading(false)
+      })
+   
+  }, [])
 
-    
-    
+  return {loading, hikes}
 }
 
-export default fetchhikingSpots
+export default  fetchHikingSpots
