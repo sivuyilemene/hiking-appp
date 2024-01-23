@@ -15,7 +15,7 @@ function fetchHikingSpots() {
   const [loading, setLoading] = useState(false)
   useEffect(() => {
     setLoading(true)
-    fetch("http://localhost:5000/hikes")
+    fetch("http://localhost:5020/hikes")
       .then(response => response.json())
       .then(json => {
           console.log(json.hikes)
