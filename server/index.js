@@ -7,7 +7,7 @@ import cors from 'cors'
 const app = express();
 app.use(cors())
 app.use(express.json());
-const port = 5000;
+const port = 5020;
 
 app.get('/hikes', (req, res) => {
     const result = Promise.resolve(getHikes())
