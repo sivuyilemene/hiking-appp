@@ -22,19 +22,20 @@ npm install
 ```
 
 ## CREATE ENV FILE
+
 ```bash
 cd ../
 touch .env
 nano .env
 ```
+
 Open the `.env` file and add your environment variables:
 
-```
+```bash
 ACCESSKEYID=YOUR_ACCESS_KEY
 SECRETACCESSKEY=YOUR_SECRET_ACCESS_KEY
 REGION=YOUR_REGION
 ```
-
 
 ## Usage
 
@@ -44,9 +45,8 @@ To start the development server, run:
 npm run dev
 ```
 
-Then open http://localhost:5000 in your browser.
+Then open <http://localhost:5000> in your browser.
 
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
