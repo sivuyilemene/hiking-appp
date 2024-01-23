@@ -1,11 +1,11 @@
 import './App.css'
 
 import './styles/tailwind.css';
-import Myview from './styles/scroll';
-import Header from './assets/Header';
+import Myview from './styles/scroll.tsx';
+import Header from './Header';
 
 import HikingSpotsList from './HikingSpotsList'
-import Navbar from './assets/Navbar'
+import Navbar from './Navbar'
 import PreferenceForm from './PreferenceForm';
 
 
@@ -19,9 +19,9 @@ function App() {
     <Navbar />
     <Header />
     <Myview/>
-
-
-    <HikingSpotsList/>
+    {/* if you call MyView show runtime error */}
+   <HikingSpotsList/>
+   
     </>
   )
 }

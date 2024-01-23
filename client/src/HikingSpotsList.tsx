@@ -1,15 +1,13 @@
-//import React from "react";
-//import { useState, useEffect} from "react";
+import React from "react";
+import { useState, useEffect} from "react";
+import Navbar from "./Navbar";
 
-//import PreferenceForm from "./PreferenceForm";
 import fetchHikingSpots from "./api";
-//import Navbar from "./assets/Navbar";
-//import Header from "./assets/Header";
-//import Myview from "./styles/sroll";
-
 
 
 const HikingSpotsList = () => {
+
+ 
   const {loading, hikes} =  fetchHikingSpots()
 
   return (

@@ -1,19 +1,8 @@
-import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 import { DynamoDBDocumentClient, ScanCommand } from "@aws-sdk/lib-dynamodb";
 
-const REGION = "";
-const ACCESSKEYID = "";
-const SECRETACCESSKEY = ""; 
-
-const dynamoDB = new DynamoDBClient ({
-    region: REGION,
-    credentials: {
-        accessKeyId: ACCESSKEYID,
-        secretAccessKey: SECRETACCESSKEY,
-    },
-
-});
-const docClient = DynamoDBDocumentClient.from(dynamoDB);
+import  dynamoDb  from "../const/providers.js";
+const myDynamoDb = dynamoDb
+const docClient = DynamoDBDocumentClient.from(myDynamoDb);
 
 
 const getHikes = async () => {
