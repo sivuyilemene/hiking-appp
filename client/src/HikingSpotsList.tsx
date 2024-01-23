@@ -26,8 +26,7 @@ const HikingSpotsList = () => {
               <th className="py-2 px-4">Rating</th>
             </tr>
           </thead>
-          <tbody>
-          {loading && <p>Loading</p>}
+          <tbody>         
             {hikes.map((spot:HikeData, index: number) => (
               <tr key={index} className="border-t border-gray-300">
                 <td className="py-2 px-4">{spot.Trail}</td>
