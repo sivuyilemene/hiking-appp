@@ -12,6 +12,7 @@ const port = 5020;
 app.get('/hikes', (req, res) => {
     const result = Promise.resolve(getHikes())
     result.then(value => {
+      res.setHeader('Content-Type', 'application/json');
       res.json({hikes: value.body})
     })
   });
