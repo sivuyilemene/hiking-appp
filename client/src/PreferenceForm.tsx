@@ -8,7 +8,7 @@ import React, { useState } from 'react';
   
 
 
-const PreferenceForm = async ({ onRecommendation }: any) => {
+const PreferenceForm = async () => {
   const [location, setLocation] = useState('');
   const [trail, setTrail] = useState('');
   const [rating, setRating] = useState('');
@@ -18,9 +18,9 @@ const PreferenceForm = async ({ onRecommendation }: any) => {
   const handleRecommendation = async (e: { preventDefault: () => void }) => {
    e.preventDefault();
     try {
-      
-       const recommendations = await fetchHikingSpots({ location, trail, rating });
-      onRecommendation(recommendations);
+      //TO-DO-GET DATA FROM DATABASE
+      //const recommendations = await fetchHikingSpots({ location, trail, rating });
+     
     } catch (error) {
         console.error("Error finding hiking spots", error);
     }
@@ -33,7 +33,7 @@ const PreferenceForm = async ({ onRecommendation }: any) => {
     
 
     return (
-        <form onSubmit={onRecommendation} className="max-w-md mx-auto mt-8 p-4 bg-gray-100 rounded-md shadow-md">
+        <form onSubmit={ handleRecommendation} className="max-w-md mx-auto mt-8 p-4 bg-gray-100 rounded-md shadow-md">
           <label className="block mb-2">
             Select Location:
             <input
@@ -78,7 +78,7 @@ const PreferenceForm = async ({ onRecommendation }: any) => {
           showResults && (
             <div className="max-w-md mx-auto mt-8 p-4 bg-white rounded-md shadow-md">
               
-              <h2 className="text-2xl font-bold mb-4">Hiking Spots Recommendations</h2>
+              <h2 className="text-2xl font-bold mb-4"> Based on your preferences, here are some hiking spots recommended for you.</h2>
               <div className="mb-2">
                 <strong>Location:</strong> {location}
               </div>
@@ -89,17 +89,18 @@ const PreferenceForm = async ({ onRecommendation }: any) => {
                 <strong>Rating:</strong> {rating}
               </div>
               <p className="text-gray-600">
-                Based on your preferences, here are some hiking spots recommended for you.
+               
               </p>
               <button
                 onClick={() => setShowResults('false')}
                 className="mt-4 px-4 py-2 text-white bg-amber-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
               >
-                <p className="text-gray-600">
-                 Here's how you can prepare for the.
-              </p>
+                
                 Back to Form
               </button>
+              <p className="text-gray-600">
+                 Here's how you can prepare for the hike + {preparation}
+              </p>
             </div>
           )
         }
